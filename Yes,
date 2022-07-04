@@ -41,7 +41,7 @@ end)
 
 b:Button("MovingShot 100% 🔥",function()
 game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
- if KeyPressed == "R" then
+ if KeyPressed == "r" then
 local args = {
     [1] = true,
     [2] = "Idle",
