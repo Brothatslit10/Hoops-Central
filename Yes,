@@ -1,0 +1,170 @@
+--Made by : https://v3rmillion.net/member.php?action=profile&uid=507120
+--Go vouch release thread : https://v3rmillion.net/showthread.php?tid=1040650
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "🔥Hoop Central 6🔥";
+    Text = "Hoop Central 6. Read Terms And Services Before Injecting Script. [TERMS AND SERVICES] Do Not Use Script On Main Account.";
+    Duration = 15;
+})
+wait(15)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "🔥Hoop Central 6🔥";
+    Text = "[TERMS AND SERVICES] You Have A Risk Of Getting Banned So Use At Your Own Risk. ";
+    Duration = 15;
+})
+
+wait(15)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "🔥Hoop Central 6🔥";
+    Text = "[TERMS AND SERVICES] We Are Not Responsible For Your Ban You Are. If You Agree To The Terms And Services Click Yes If No Click No ";
+    Duration = 15;
+})
+
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+
+local w = library:CreateWindow("🔥 Hoop Central 6 🔥 ") -- Creates the window
+
+local b = w:CreateFolder("Main Menu 🖱️") -- Creates the folder(U will put here your buttons,etc)
+
+local c = w:CreateFolder("Settings 🖱️")
+
+b:Button("Aimbot 100% 🔥",function()
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
+ if KeyPressed == "q" then
+local args = {
+    [1] = true,
+    [2] = "Idle",
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage").Remotes.server.shoot:FireServer(unpack(args))
+wait(0.40)
+
+
+local args = {
+    [1] = false,
+    [2] = false
+}
+
+game:GetService("ReplicatedStorage").Remotes.server.shoot:FireServer(unpack(args))
+end
+end)
+end)
+
+
+b:Button("MovingShot 100% 🔥",function()
+    print("Elym Winning")
+end)
+
+b:Button("Anticontest 100% 🔥",function()
+    print("Elym Winning")
+end)
+
+b:Toggle("Ball Mag",function(bool)
+    shared.toggle = bool
+    print(shared.toggle)
+end)
+
+b:Toggle("Hide Name",function(bool)
+    shared.toggle = bool
+    print(shared.toggle)
+end)
+
+b:Toggle("AutoSprint",function(bool)
+    shared.toggle = bool
+    print(shared.toggle)
+end)
+
+b:Slider("HipHeight",{
+    min = 2.71; -- min value of the slider
+    max = 50; -- max value of the slider
+    precise = true; -- max 2 decimals
+},function(HipHeight)
+_G.HackedHipHeight = (HipHeight)
+ 
+local Plrs = game:GetService("Players")
+ 
+local MyPlr = Plrs.LocalPlayer
+local MyChar = MyPlr.Character
+ 
+if MyChar then
+local Hum = MyChar.Humanoid
+Hum.Changed:connect(function()
+Hum.HipHeight = _G.HackedHipHeight
+end)
+Hum.HipHeight = _G.HackedHipHeight
+end
+ 
+ 
+MyPlr.CharacterAdded:connect(function(Char)
+MyChar = Char
+repeat wait() until Char:FindFirstChild("Humanoid")
+local Hum = Char.Humanoid
+Hum.Changed:connect(function()
+Hum.HipHeightHipHeight = _G.HackedHipHeight
+end)
+Hum.HipHeight = _G.HackedHipHeight
+end)
+end)
+
+b:Slider("Long Arms",{
+    min = 10; -- min value of the slider
+    max = 50; -- max value of the slider
+    precise = true; -- max 2 decimals
+},function(value)
+    print(value)
+end)
+
+b:Slider("Walkspeed",{
+    min = 0; -- min value of the slider
+    max = 50; -- max value of the slider
+    precise = true; -- max 2 decimals
+},function(value)
+_G.HackedWalkSpeed = (value)
+ 
+local Plrs = game:GetService("Players")
+ 
+local MyPlr = Plrs.LocalPlayer
+local MyChar = MyPlr.Character
+ 
+if MyChar then
+local Hum = MyChar.Humanoid
+Hum.Changed:connect(function()
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end
+ 
+ 
+MyPlr.CharacterAdded:connect(function(Char)
+MyChar = Char
+repeat wait() until Char:FindFirstChild("Humanoid")
+local Hum = Char.Humanoid
+Hum.Changed:connect(function()
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+end)
+
+
+c:DestroyGui()
+
+--[[
+How to refresh a dropdown:
+1)Create the dropdown and save it in a variable
+local yourvariable = b:Dropdown("Hi",yourtable,function(a)
+    print(a)
+end)
+2)Refresh it using the function
+yourvariable:Refresh(yourtable)
+How to refresh a label:
+1)Create your label and save it in a variable
+local yourvariable = b:Label("Pretty Useless NGL",{
+    TextSize = 25; -- Self Explaining
+    TextColor = Color3.fromRGB(255,255,255);
+    BgColor = Color3.fromRGB(69,69,69);
+})
+2)Refresh it using the function
+yourvariable:Refresh("Hello") It will only change the text ofc
+]]
