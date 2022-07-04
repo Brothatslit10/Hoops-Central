@@ -40,7 +40,26 @@ end)
 
 
 b:Button("MovingShot 100% 🔥",function()
-    print("Elym Winning")
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
+ if KeyPressed == "R" then
+local args = {
+    [1] = true,
+    [2] = "Idle",
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage").Remotes.server.shoot:FireServer(unpack(args))
+wait(0.30)
+
+
+local args = {
+    [1] = false,
+    [2] = false
+}
+
+game:GetService("ReplicatedStorage").Remotes.server.shoot:FireServer(unpack(args))
+end
+end)
 end)
 
 b:Button("Anticontest 100% 🔥",function()
